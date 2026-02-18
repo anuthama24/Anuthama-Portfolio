@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Portfolio</title>
+    <title>My Portfolio | 3D Viewer</title>
     <link href="dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
     <link href="dflip/css/themify-icons.min.css" rel="stylesheet" type="text/css">
     <style>
-        body { background-color: #1a1a1a; margin: 0; }
+        body { background-color: #1a1a1a; margin: 0; padding: 0; overflow: hidden; }
         #my-portfolio { height: 100vh; width: 100%; }
     </style>
 </head>
@@ -13,19 +13,18 @@
 
     <div class="_df_book" source="portfolio.pdf" id="my-portfolio"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
     <script src="dflip/js/libs/jquery.min.js"></script>
     <script src="dflip/js/dflip.min.js"></script>
 
     <script>
-        // This is the "Full 3D" configuration
-        var option_my_portfolio = {
-            webgl: true,      // Forces the 3D flipping animation
-            hard: "none",     // Makes pages flexible like paper
-            duration: 800     // Speed of the flip
+        // 3. Force 3D Mode and tell it where the folders are
+        var dFlipLocation = "dflip/";
+        var dfOptions = {
+            webgl: true,
+            overwritePDFWorker: true // Forces it to use the corrected engine
         };
-
-        // This line tells the book exactly where its support files are
-        var dFlipLocation = "dflip/"; 
     </script>
 
 </body>
